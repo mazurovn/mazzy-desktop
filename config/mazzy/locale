@@ -1,0 +1,4 @@
+# Язык Mazzy. Меняется в настройках, страница «Язык и ввод».
+export LANG=ru_RU.UTF-8
+export LC_MESSAGES=ru_RU.UTF-8
+export LC_TIME=ru_RU.UTF-8

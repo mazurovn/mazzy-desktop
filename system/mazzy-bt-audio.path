@@ -1,0 +1,9 @@
+[Unit]
+Description=MAZZY Bluetooth audio: реакция на сброс чипа и пробуждение
+
+[Path]
+PathChanged=/run/mazzy-bt/trigger
+Unit=mazzy-bt-audio-trigger.service
+
+[Install]
+WantedBy=default.target

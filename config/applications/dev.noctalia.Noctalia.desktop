@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Noctalia
+Name[ru]=Настройки Noctalia
+Comment=Settings of the desktop shell
+Comment[ru]=Настройки оболочки рабочего стола
+Exec=sh -c "noctalia msg settings-open || { noctalia --daemon; sleep 2; noctalia msg settings-open; }"
+Icon=noctalia
+Terminal=false
+Categories=Settings;DesktopSettings;
+StartupNotify=false
+Keywords=desktop;shell;wayland;settings;настройки;

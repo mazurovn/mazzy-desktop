@@ -1,0 +1,2 @@
+# MediaTek MT7630E Bluetooth (Foxconn 0489:e069) — нет в таблице btusb, привязываем вручную
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="0489", ATTR{idProduct}=="e069", RUN+="/sbin/modprobe btusb", RUN+="/bin/sh -c 'grep -q ^0489 /sys/bus/usb/drivers/btusb/new_id || echo 0489 e069 0 0e8d 763f > /sys/bus/usb/drivers/btusb/new_id'", ATTR{power/control}="on"

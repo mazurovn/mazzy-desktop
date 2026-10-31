@@ -1,0 +1,37 @@
+# Док снизу в стиле macOS: увеличение иконок под курсором, точки под запущенными
+[dock]
+enabled = true
+position = "bottom"
+icon_size = 46
+main_axis_padding = 10
+cross_axis_padding = 6
+item_spacing = 4
+background_opacity = 0.72
+border_width = 0.0
+shadow = true
+radius = 20
+concave_edge_corners = false
+margin_edge = 10
+margin_ends = 0
+
+show_running = true
+auto_hide = false
+smart_auto_hide = false
+reserve_space = true
+layer = "top"
+
+active_scale = 1.0
+inactive_scale = 0.92
+magnification = true
+magnification_scale = 1.5
+active_opacity = 1.0
+inactive_opacity = 0.92
+show_instance_count = true
+show_dots = true
+
+launcher_position = "start"
+launcher_icon = "hexagon"
+launcher_custom_image = "~/.local/share/icons/hicolor/256x256/apps/mazzy.png"
+launcher_custom_image_colorize = false
+
+pinned = ["firefox_firefox", "org.gnome.Nautilus", "kitty", "Zoom", "thunderbird_thunderbird", "org.gnome.TextEditor", "dev.mazzy.settings"]

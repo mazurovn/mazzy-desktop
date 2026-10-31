@@ -1,0 +1,34 @@
+{
+  "parallax": {
+    "enabled": true,
+    "mouse_px": 10,
+    "workspace_px": 48,
+    "zoom": 1.1,
+    "smooth": 5.0,
+    "mouse_hz": 10
+  },
+  "switcher": {
+    "tilt": 55,
+    "depth": 520,
+    "spacing": 300,
+    "center_gap": 380,
+    "card_w": 1000,
+    "card_h": 630,
+    "mouse_parallax": 60,
+    "dim": 0.55,
+    "reflection": true,
+    "glow": true
+  },
+  "effects": {
+    "blur": true,
+    "blur_size": 2,
+    "blur_passes": 1,
+    "rounding": 12,
+    "gaps_in": 6,
+    "gaps_out": 14,
+    "shadow": true,
+    "inactive_opacity": 0.96,
+    "dim_inactive": 0.06,
+    "animations": true
+  }
+}

@@ -1,0 +1,7 @@
+[Unit]
+Description=MT7630E Bluetooth watchdog
+After=mt7630e-bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mt7630e-bt-watchdog.sh

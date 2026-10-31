@@ -1,0 +1,149 @@
+# MAZZY_VO — Noctalia v5 (mac-стиль). Правки через UI пишутся в
+# ~/.local/state/noctalia/settings.toml и перекрывают этот файл.
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "m3-content"   # палитра от обоев (Material 3)
+
+[shell]
+polkit_agent = true            # свой тёмный диалог пароля вместо hyprpolkitagent
+font_family = "Inter"
+corner_radius_scale = 1.3
+button_borders = false
+input_borders = true
+popup_borders = false
+card_borders = false
+popup_shadows = true
+lang = "ru"
+time_format = "{:%H:%M}"
+date_format = "%A, %d %B"
+external_ip_enabled = false
+telemetry_enabled = false
+setup_wizard_enabled = false
+
+[shell.session]
+grid = true
+grid_columns = 3
+
+# Лаунчер как Launchpad: сетка приложений, категории, действия по правому клику, закреплённые
+[shell.launcher]
+app_grid = true
+categories = true
+compact = false
+show_icons = true
+show_app_actions = true
+show_app_origin_indicator = false
+sort_by_usage = true
+
+# Стеклянные панели с тенью, лаунчер по центру, центр управления «пришит» к бару
+[shell.panel]
+transparency_mode = "glass"
+shadow = true
+borders = false
+launcher_placement = "floating"
+launcher_position = "center"
+control_center_placement = "attached"
+clipboard_placement = "floating"
+
+[shell.window_switcher]
+mru = true
+
+[shell.animation]
+enabled = true
+speed = 1.0
+
+[shell.screen_corners]
+enabled = true        # скруглённые углы экрана
+size = 18
+
+# Затемнение и блюр обоев, когда открыта панель (как Control Center в macOS)
+[backdrop]
+enabled = true
+blur_intensity = 0.55
+tint_intensity = 0.35
+
+# Горячие углы: ↖ переключатель окон, ↗ центр управления, ↙ лаунчер, ↘ виджеты
+[hot_corners]
+enabled = true
+delay_ms = 150
+[hot_corners.top_left]
+action = "window_switcher"
+[hot_corners.top_right]
+action = "control_center"
+[hot_corners.bottom_left]
+action = "launcher"
+[hot_corners.bottom_right]
+action = "command"
+command = "noctalia msg desktop-widgets-toggle"
+
+[audio]
+enable_sounds = true
+sound_volume = 0.35
+
+[weather]
+enabled = true
+effects = true
+unit = "metric"
+refresh_minutes = 30
+
+[location]
+auto_locate = true
+
+[control_center]
+sidebar = "full"
+sidebar_section = "full"
+width = 720
+show_shortcut_labels = true
+[[control_center.shortcuts]]
+type = "wifi"
+[[control_center.shortcuts]]
+type = "bluetooth"
+[[control_center.shortcuts]]
+type = "nightlight"
+[[control_center.shortcuts]]
+type = "notification"
+[[control_center.shortcuts]]
+type = "caffeine"
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[nightlight]
+enabled = true          # тёплый экран ночью (Night Shift)
+temperature_day = 6500
+temperature_night = 4200
+
+# Простой: блокировка через 10 мин, экран гаснет через 12
+[idle.behavior.lock]
+enabled = true
+timeout = 600
+[idle.behavior.screen-off]
+enabled = true
+timeout = 720
+
+# Тосты сверху справа. max_visible = 0 занимает весь столбец и выглядит как новое окно.
+[notification]
+position = "top_right"
+layer = "overlay"
+max_visible = 3
+scale = 1.0
+background_opacity = 0.92
+border = false
+offset_x = 16
+offset_y = 8
+
+[osd]
+position = "bottom_center"
+scale = 1.0
+background_opacity = 0.85
+border = false
+offset_y = 110
+
+[lockscreen]
+enabled = true
+lock_before_suspend = true
+blurred_desktop = true
+blur_intensity = 0.6
+tint_intensity = 0.25
+
+

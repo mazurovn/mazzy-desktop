@@ -1,0 +1,16 @@
+/* MAZZY: привилегированные действия сети и Bluetooth без пароля для локального пользователя из группы sudo.
+   Ставится в /usr/share/polkit-1/rules.d/. Разрешены только перечисленные программы, не pkexec вообще.
+   Заменяет чтение пароля из файла (раньше scripts брали его из ~/Documents/sudo.txt). */
+polkit.addRule(function(action, subject) {
+  if (action.id !== "org.freedesktop.policykit.exec") return undefined;
+  if (!subject.local || !subject.active) return undefined;
+  if (!subject.isInGroup("sudo")) return undefined;
+  var prog = action.lookup("program");
+  var allowed = [
+    "/usr/local/sbin/mt7630e-bt-reset.sh",
+    "/usr/local/sbin/mt7630e-bt-watchdog.sh",
+    "/usr/local/bin/mazzy-vpn"
+  ];
+  if (allowed.indexOf(prog) >= 0) return polkit.Result.YES;
+  return undefined;
+});

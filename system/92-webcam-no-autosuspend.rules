@@ -1,0 +1,4 @@
+# Chicony USB2.0 HD UVC WebCam (ASUS N-series, 04f2:b3fd): при выходе из USB-автосуспенда камера
+# не запускает поток, а переподключается к шине — приложение получает VIDIOC_DQBUF: No such device.
+# Лечится запретом автосуспенда именно для неё (проверено 2026-10-04).
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04f2", ATTR{idProduct}=="b3fd", TEST=="power/control", ATTR{power/control}="on"

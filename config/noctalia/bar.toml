@@ -1,0 +1,66 @@
+# Плавающий полупрозрачный бар сверху — как строка меню macOS
+[bar]
+order = ["main"]
+
+[bar.default]
+position = "top"
+enabled = true
+reserve_space = true
+layer = "top"
+thickness = 32
+background_opacity = 0.72
+border_width = 0.0
+shadow = true
+radius = 14
+concave_edge_corners = false
+margin_ends = 12
+margin_edge = 8
+padding = 12
+widget_spacing = 4
+font_weight = 500
+
+capsule = false
+
+start  = ["launcher", "workspaces", "active_window"]
+center = ["clock"]
+end    = ["media", "cpu", "ram", "tray", "privacy", "keyboard_layout", "network", "bluetooth", "volume", "brightness", "battery", "notifications", "control-center"]
+
+[bar.default.dead_zone.actions]
+left = "panel-toggle launcher"
+middle = "exec kitty"
+scroll_up = "volume-up"
+scroll_down = "volume-down"
+
+[widget.workspaces]
+style = "focus_hint"
+show_labels = true
+label_source = "id"
+
+[widget.launcher]
+glyph = "hexagon"
+custom_image = "~/.local/share/icons/hicolor/256x256/apps/mazzy.png"
+custom_image_colorize = false
+
+[widget.active_window]
+max_length = 200
+display = "icon_and_text"
+show_empty_label = false
+
+[widget.keyboard_layout]
+hide_when_single_layout = true
+show_glyph = false
+display = "short"
+
+[widget.clock]
+
+[widget.cpu]
+type = "sysmon"
+stat = "cpu_usage"
+
+[widget.ram]
+type = "sysmon"
+stat = "ram_pct"
+
+[widget.media]
+max_length = 160
+title_scroll = "always"

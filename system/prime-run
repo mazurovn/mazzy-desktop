@@ -1,0 +1,10 @@
+#!/bin/sh
+# Запуск программы на GTX 850M. Экран остаётся на Intel HD 4600.
+# Пример: prime-run glxinfo -B
+unset __EGL_VENDOR_LIBRARY_FILENAMES
+export __NV_PRIME_RENDER_OFFLOAD=1
+export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export __VK_LAYER_NV_optimus=NVIDIA_only
+export VK_LOADER_DRIVERS_SELECT='*nvidia*'
+exec "$@"

@@ -1,0 +1,12 @@
+[Unit]
+Description=MAZZY Bluetooth audio (подключение профилей после готовности WirePlumber)
+After=wireplumber.service
+Wants=wireplumber.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mazzy-bt-audio session
+TimeoutStartSec=120
+
+[Install]
+WantedBy=default.target

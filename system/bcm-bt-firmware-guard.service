@@ -1,0 +1,12 @@
+[Unit]
+Description=Broadcom BCM20702: догрузить патч прошивки Bluetooth, если он не загрузился при старте
+After=bluetooth.service systemd-journald.service
+Wants=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/bcm-bt-firmware-guard.sh
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target

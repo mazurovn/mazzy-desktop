@@ -1,0 +1,4 @@
+# Горячее подключение/извлечение Bluetooth-адаптера: дёргаем пользовательский юнит,
+# чтобы он переприменил выбор адаптера (вставленный донгл становится основным) и вернул наушники.
+SUBSYSTEM=="bluetooth", ACTION=="add", RUN+="/usr/local/bin/mazzy-bt-trigger"
+SUBSYSTEM=="bluetooth", ACTION=="remove", RUN+="/usr/local/bin/mazzy-bt-trigger"

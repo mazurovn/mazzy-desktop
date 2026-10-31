@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=MAZZY Environment
+Name[ru]=MAZZY Environment
+Comment=Parallax, 3D window switcher, Hyprland effects
+Comment[ru]=Параллакс, 3D-переключатель окон, эффекты Hyprland
+Exec=sh -c "exec ~/.local/bin/mazzy-settings"
+Icon=mazzy
+Terminal=false
+Categories=Settings;DesktopSettings;
+StartupWMClass=dev.mazzy.settings
+Keywords=mazzy;effects;parallax;эффекты;параллакс;

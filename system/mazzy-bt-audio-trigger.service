@@ -1,0 +1,7 @@
+[Unit]
+Description=MAZZY Bluetooth audio (переподключение после сна / сброса чипа)
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mazzy-bt-audio trigger
+TimeoutStartSec=180

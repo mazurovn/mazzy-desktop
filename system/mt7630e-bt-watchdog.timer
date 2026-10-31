@@ -1,0 +1,10 @@
+[Unit]
+Description=Check MT7630E Bluetooth every minute
+
+[Timer]
+OnBootSec=45s
+OnUnitActiveSec=1min
+AccuracySec=10s
+
+[Install]
+WantedBy=timers.target

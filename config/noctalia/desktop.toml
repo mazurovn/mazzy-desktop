@@ -1,0 +1,109 @@
+[wallpaper]
+enabled = true
+fill_mode = "crop"
+transition = ["fade", "zoom", "disc"]
+transition_duration = 1200
+transition_on_startup = true
+directory = "~/Pictures/Wallpapers"
+
+[wallpaper.default]
+path = "~/Pictures/Wallpapers/default.jpg"
+
+# Автосмена обоев раз в час (палитра пересчитывается сама)
+[wallpaper.automation]
+enabled = true
+interval_seconds = 3600
+order = "random"
+
+# --- Виджеты на рабочем столе (правая колонка, как Центр уведомлений macOS) ---
+# Редактор: ⌘ ⇧ W или `noctalia msg desktop-widgets-edit`
+[desktop_widgets]
+enabled = true
+schema_version = 2
+# sysmon на столе убран: ежесекундный damage полупрозрачного слоя стоил +5 % CPU Hyprland (CPU/RAM есть в баре)
+widget_order = ["clock@eDP-1", "weather@eDP-1", "calendar@eDP-1", "media@eDP-1", "viz@eDP-1"]
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = false
+
+[desktop_widgets.widget."clock@eDP-1"]
+type = "clock"
+output = "eDP-1"
+placement_width = 1920.0
+placement_height = 1080.0
+cx = 1720.0
+cy = 200.0
+box_width = 240.0
+box_height = 240.0
+rotation = 0.0
+[desktop_widgets.widget."clock@eDP-1".settings]
+clock_style = "analog"
+background_opacity = 0.0
+
+[desktop_widgets.widget."weather@eDP-1"]
+type = "weather"
+output = "eDP-1"
+placement_width = 1920.0
+placement_height = 1080.0
+cx = 1720.0
+cy = 430.0
+box_width = 340.0
+box_height = 190.0
+rotation = 0.0
+[desktop_widgets.widget."weather@eDP-1".settings]
+show_forecast = true
+forecast_days = 4
+background_color = "surface"
+background_opacity = 0.45
+background_radius = 18.0
+background_padding = 14.0
+
+[desktop_widgets.widget."calendar@eDP-1"]
+type = "calendar"
+output = "eDP-1"
+placement_width = 1920.0
+placement_height = 1080.0
+cx = 1720.0
+cy = 810.0
+box_width = 340.0
+box_height = 230.0
+rotation = 0.0
+[desktop_widgets.widget."calendar@eDP-1".settings]
+show_events = false
+background_color = "surface"
+background_opacity = 0.45
+background_radius = 18.0
+background_padding = 14.0
+
+[desktop_widgets.widget."media@eDP-1"]
+type = "media_player"
+output = "eDP-1"
+placement_width = 1920.0
+placement_height = 1080.0
+cx = 250.0
+cy = 850.0
+box_width = 400.0
+box_height = 130.0
+rotation = 0.0
+[desktop_widgets.widget."media@eDP-1".settings]
+hide_when_no_media = true
+background_color = "surface"
+background_opacity = 0.45
+background_radius = 18.0
+background_padding = 12.0
+
+[desktop_widgets.widget."viz@eDP-1"]
+type = "audio_visualizer"
+output = "eDP-1"
+placement_width = 1920.0
+placement_height = 1080.0
+cx = 960.0
+cy = 900.0
+box_width = 900.0
+box_height = 90.0
+rotation = 0.0
+[desktop_widgets.widget."viz@eDP-1".settings]
+show_when_idle = false
+background_opacity = 0.0

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Settings
+Name[ru]=Настройки
+Comment=System settings (GNOME Control Center)
+Comment[ru]=Системные настройки (сеть, звук, принтеры, пользователи…)
+Exec=env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+Icon=org.gnome.Settings
+Terminal=false
+Categories=Settings;System;
+StartupNotify=true
+Keywords=settings;preferences;настройки;параметры;

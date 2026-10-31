@@ -1,0 +1,16 @@
+[Unit]
+Description=Bring up MT7630E Bluetooth (chip reset after boot; see MAZZY_VO/system/README.md)
+After=systemd-udev-settle.service
+Before=NetworkManager.service bluetooth.service
+Wants=bluetooth.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mt7630e-bt-reset.sh chip
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=10
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
